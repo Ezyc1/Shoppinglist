@@ -1,0 +1,15 @@
+{% extends 'listor/mall.html'  %}
+{% load crispy_forms_tags %}
+
+{% block innehall %}
+    <div class="container py-5">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset>
+                <legend>Ny Vara</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <button class="btn btn-primary" type="submit">Spara vara</button>
+        </form>
+    </div>
+    {% endblock innehall %}

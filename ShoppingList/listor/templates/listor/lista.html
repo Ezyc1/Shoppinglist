@@ -1,0 +1,25 @@
+{% extends 'listor/mall.html'  %}
+
+{% block innehall %}
+
+    <div class="container py-5">
+        {% for lista in listan %}
+            <h1>{{lista.list_name}}</h1>
+            <a href="{% url 'lista-uppdatera' lista.id %}">Uppdatera</a>
+        {% endfor %}
+
+        <table>
+            {% for item in items %}
+            <tr>
+                <td>{{item.item_name}}</td>
+                <td>{{item.amount}}</td>
+                <td>redigera</td>
+                <td>radera</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% for lista in listan %}
+        <a class="btn btn-primary" href="{% url 'vara-ny' lista.id %}">Ny vara</a>
+        {% endfor %}
+    </div>
+{% endblock innehall %}
