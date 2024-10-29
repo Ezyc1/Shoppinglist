@@ -2,14 +2,14 @@
     "version": 2,
     "builds": [
       {
-        "src": "Python/SecondApp/ShoppingList/manage.py",
+        "src": "ShoppingList/manage.py",
         "use": "@vercel/python"
       }
     ],
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "Python/SecondApp/ShoppingList/manage.py"
+        "dest": "ShoppingList/manage.py"
       }
     ]
   }
