@@ -1,16 +1,19 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "ShoppingList/manage.py",
-        "use": "@vercel/python"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "ShoppingList/manage.py"
-      }
-    ]
+  "version": 2,
+  "builds": [
+    {
+      "src": "ShoppingList/manage.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "ShoppingList/manage.py"
+    }
+  ],
+  "env": {
+    "DJANGO_SETTINGS_MODULE": "ShoppingList.ShoppingList.settings",
+    "DATABASE_URL": "sqlite:///db.sqlite3" 
   }
-  
+}
