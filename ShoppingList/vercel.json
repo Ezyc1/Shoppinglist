@@ -2,26 +2,15 @@
     "version": 2,
     "builds": [
       {
-        "src": "ShoppingList/wsgi.py",
-        "use": "@vercel/python",
-        "config": {"maxLambdaSize": "15mb", "runtime": "python3.x"}
-      },
-      {
-        "src": "build_files.sh",
-        "use": "@vercel/static-build",
-        "config": {
-          "distDir": "staticfiles"
-        }
+        "src": "Python/SecondApp/ShoppingList/manage.py",
+        "use": "@vercel/python"
       }
     ],
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "ShoppingList/wsgi.py"
-      },
-      {
-        "src": "/static/(.*)",
-        "dest": "/static/$1"
+        "dest": "Python/SecondApp/ShoppingList/manage.py"
       }
     ]
   }
+  
